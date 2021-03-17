@@ -14,72 +14,65 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="imgPaper">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>166</width>
-      <height>259</height>
+      <x>300</x>
+      <y>20</y>
+      <width>171</width>
+      <height>241</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>images/paper.jpg</pixmap>
+     <pixmap resource="resources.qrc">:/new/images/images/paper.jpg</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="imgScissors">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>120</y>
-      <width>47</width>
-      <height>13</height>
+      <x>550</x>
+      <y>20</y>
+      <width>171</width>
+      <height>241</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/new/images/images/scissors.jpg</pixmap>
+    </property>
    </widget>
-   <widget class="QPushButton" name="paper">
+   <widget class="QLabel" name="imgRock">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>283</y>
-      <width>80</width>
-      <height>21</height>
+      <x>50</x>
+      <y>20</y>
+      <width>171</width>
+      <height>241</height>
      </rect>
     </property>
     <property name="text">
-     <string>paper</string>
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/new/images/images/rock.jpg</pixmap>
     </property>
    </widget>
-   <widget class="QPushButton" name="rock">
+   <widget class="QPushButton" name="btnRock">
     <property name="geometry">
      <rect>
-      <x>96</x>
-      <y>283</y>
-      <width>80</width>
-      <height>21</height>
+      <x>140</x>
+      <y>320</y>
+      <width>171</width>
+      <height>241</height>
      </rect>
     </property>
     <property name="text">
-     <string>rock</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="scissors">
-    <property name="geometry">
-     <rect>
-      <x>182</x>
-      <y>283</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>scissors</string>
+     <string/>
     </property>
    </widget>
   </widget>
@@ -95,6 +88,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
