@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    ui->btnRock->setStyleSheet("border-image:url(:/new/images/images/rock.jpg);");
 }
 
 MainWindow::~MainWindow()
