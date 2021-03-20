@@ -67,9 +67,6 @@ void MainWindow::Losuj()
 void MainWindow::WhoWon()
 {
 
-    ///****Nwm o co ci chodzi? Wszystko jest przecież w porządku, ale za dużo qDebuga najebałeś, po co ci go tyle?*****////
-
-
     if ((playerChoice == 0 && computerChoice == 2) || (playerChoice == 1 && computerChoice == 0) || (playerChoice == 2 && computerChoice == 1))
     {
         ui->lblPlayerScore->setText(QString::number(playerPoints++));
