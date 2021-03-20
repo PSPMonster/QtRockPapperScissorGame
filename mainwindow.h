@@ -48,8 +48,8 @@ private:
 
 private:
     int computerChoice;
-    int computerPoints = 0;
+    int computerPoints = 1;
     int playerChoice;
-    int playerPoints = 0;
+    int playerPoints = 1;
 };
 #endif // MAINWINDOW_H
