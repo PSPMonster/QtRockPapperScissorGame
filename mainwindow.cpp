@@ -114,6 +114,8 @@ void MainWindow::on_btnRestart_clicked()
     computerPoints = 0;
     ui->lblPlayerScore->setText(QString::number(playerPoints));
     ui->lblCompScore->setText(QString::number(computerPoints));
+    playerPoints = 1;
+    computerPoints = 1;
     ui->lblDraw->setText("Scores have been reset!");
     klik = new QMediaPlayer;
     klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
