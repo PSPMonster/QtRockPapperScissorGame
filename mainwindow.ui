@@ -23,6 +23,9 @@
       <height>241</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -36,6 +39,9 @@
       <height>241</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -48,6 +54,9 @@
       <width>171</width>
       <height>241</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
