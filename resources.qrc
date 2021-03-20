@@ -4,4 +4,8 @@
         <file>images/rock.jpg</file>
         <file>images/scissors.jpg</file>
     </qresource>
+    <qresource prefix="/new/sounds">
+        <file>sounds/COMBAT01.MP3</file>
+        <file>sounds/snd1.wav</file>
+    </qresource>
 </RCC>

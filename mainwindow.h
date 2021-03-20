@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMediaPlayer>
+#include <QRandomGenerator>
+#include <QDebug>
+#include <QTest>
+#include <QSoundEffect>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,8 +31,20 @@ private slots:
 
     void WhoWon();
 
+    void on_btnRestart_clicked();
+
+    void on_SliVolume_sliderMoved(int position);
+
+    void on_btnPause_clicked();
+
+    void on_btnStop_clicked();
+
+    void on_btnPlay_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QMediaPlayer* player;
+    QMediaPlayer* klik;
 
 private:
     int computerChoice;
