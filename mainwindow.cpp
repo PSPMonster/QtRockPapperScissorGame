@@ -24,6 +24,9 @@ MainWindow::~MainWindow()
 }
 
 
+
+// przycisk od wybrania kamienia
+
 void MainWindow::on_btnRock_clicked()
 {
     playerChoice = 0; //0
@@ -34,6 +37,10 @@ void MainWindow::on_btnRock_clicked()
     klik->setVolume(20);
     klik->play();
 }
+
+
+
+// przycisk od wybrania papieru
 
 void MainWindow::on_btnPaper_clicked()
 {
@@ -46,6 +53,10 @@ void MainWindow::on_btnPaper_clicked()
     klik->play();
 }
 
+
+
+// przycisk od wybrania nozyc
+
 void MainWindow::on_btnScissors_clicked()
 {
     playerChoice = 2; //2
@@ -57,12 +68,20 @@ void MainWindow::on_btnScissors_clicked()
     klik->play();
 }
 
+
+
+// jak nazwa mowi, ta funkcja losuje wybor dla komputera zeby gra byla uczciwa
+
 void MainWindow::Losuj()
 {
     computerChoice = QRandomGenerator::global()->bounded(0, 3);
     qDebug() << "Computer choosed: " << computerChoice;
     WhoWon();
 }
+
+
+
+// funkcja odpowiedzialna z okreslanie kto wygral oraz za wyświetlanie punktow i komunikatu stosownie do wygranej, przegrqanej, lub remisu
 
 void MainWindow::WhoWon()
 {
@@ -85,6 +104,10 @@ void MainWindow::WhoWon()
     }
 }
 
+
+
+// przycisk do resetowania wyniku
+
 void MainWindow::on_btnRestart_clicked()
 {
     playerPoints = 0;
@@ -98,10 +121,18 @@ void MainWindow::on_btnRestart_clicked()
     klik->play();
 }
 
+
+
+//slider do glosnosci muzyki
+
 void MainWindow::on_SliVolume_sliderMoved(int position)
 {
         player->setVolume(position);
 }
+
+
+
+// przycisk od pauzy dla muzyki
 
 void MainWindow::on_btnPause_clicked()
 {
@@ -112,6 +143,10 @@ void MainWindow::on_btnPause_clicked()
     player->pause();
 }
 
+
+
+// przycisk od stopowania muzyki
+
 void MainWindow::on_btnStop_clicked()
 {
     klik = new QMediaPlayer;
@@ -120,6 +155,10 @@ void MainWindow::on_btnStop_clicked()
     klik->play();
     player->stop();
 }
+
+
+
+// przycisk od puszczania/odpauzowywania muzyki
 
 void MainWindow::on_btnPlay_clicked()
 {
