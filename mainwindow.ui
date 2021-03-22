@@ -10,6 +10,9 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -65,7 +68,7 @@
    <widget class="QPushButton" name="btnRestart">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>360</x>
       <y>450</y>
       <width>101</width>
       <height>91</height>
@@ -167,7 +170,7 @@ float:  leftl;</string>
      <rect>
       <x>50</x>
       <y>450</y>
-      <width>301</width>
+      <width>291</width>
       <height>91</height>
      </rect>
     </property>
@@ -201,6 +204,19 @@ float:  leftl;</string>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
+        <widget class="QPushButton" name="btnPrev">
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>|&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="btnStop">
          <property name="text">
           <string>Stop</string>
@@ -218,6 +234,19 @@ float:  leftl;</string>
         <widget class="QPushButton" name="btnPlay">
          <property name="text">
           <string>Play</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNext">
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&gt;|</string>
          </property>
         </widget>
        </item>

@@ -11,13 +11,25 @@ MainWindow::MainWindow(QWidget *parent)
     ui->btnRock->setStyleSheet("border-image:url(:/new/images/images/rock.jpg);");
     ui->btnPaper->setStyleSheet("border-image:url(:/new/images/images/paper.jpg);");
     ui->btnScissors->setStyleSheet("border-image:url(:/new/images/images/scissors.jpg);");
+    playlist = new QMediaPlaylist;
+    playlist->addMedia(QUrl("qrc:/new/sounds/sounds/COMBAT01.MP3"));
+    playlist->addMedia(QUrl("qrc:/new/sounds/sounds/COMBAT02.MP3"));
+    playlist->addMedia(QUrl("qrc:/new/sounds/sounds/COMBAT03.MP3"));
+    playlist->addMedia(QUrl("qrc:/new/sounds/sounds/COMBAT04.MP3"));
+    playlist->addMedia(QUrl("qrc:/new/sounds/sounds/szanty.mp3"));
+    playlist->addMedia(QUrl("qrc:/new/sounds/sounds/DftPnk.mp3"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+    playlist->setCurrentIndex(n);
     player = new QMediaPlayer;
-    player->setMedia(QUrl("qrc:/new/sounds/sounds/COMBAT01.MP3"));
+    player->setPlaylist(playlist);
     player->setVolume(10);
     player->play();
+    klik = new QMediaPlayer;
+    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
+    klik->setVolume(20);
     qDebug() << player->errorString();
-}
 
+}
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -32,9 +44,6 @@ void MainWindow::on_btnRock_clicked()
     playerChoice = 0; //0
     qDebug() << "Player choosed: " << playerChoice;
     Losuj();
-    klik = new QMediaPlayer;
-    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
-    klik->setVolume(20);
     klik->play();
 }
 
@@ -47,12 +56,8 @@ void MainWindow::on_btnPaper_clicked()
     playerChoice = 1; //1
     qDebug() << "Player choosed: " << playerChoice;
     Losuj();
-    klik = new QMediaPlayer;
-    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
-    klik->setVolume(20);
     klik->play();
 }
-
 
 
 // przycisk od wybrania nozyc
@@ -62,9 +67,6 @@ void MainWindow::on_btnScissors_clicked()
     playerChoice = 2; //2
     qDebug() << "Player choosed: " << playerChoice;
     Losuj();
-    klik = new QMediaPlayer;
-    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
-    klik->setVolume(20);
     klik->play();
 }
 
@@ -117,10 +119,10 @@ void MainWindow::on_btnRestart_clicked()
     playerPoints = 1;
     computerPoints = 1;
     ui->lblDraw->setText("Scores have been reset!");
-    klik = new QMediaPlayer;
-    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
-    klik->setVolume(20);
-    klik->play();
+    QMediaPlayer* newD = new QMediaPlayer;
+    newD->setMedia(QUrl("qrc:/new/sounds/sounds/newday.mp3"));
+    newD->setVolume(20);
+    newD->play();
 }
 
 
@@ -138,9 +140,6 @@ void MainWindow::on_SliVolume_sliderMoved(int position)
 
 void MainWindow::on_btnPause_clicked()
 {
-    klik = new QMediaPlayer;
-    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
-    klik->setVolume(20);
     klik->play();
     player->pause();
 }
@@ -151,9 +150,6 @@ void MainWindow::on_btnPause_clicked()
 
 void MainWindow::on_btnStop_clicked()
 {
-    klik = new QMediaPlayer;
-    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
-    klik->setVolume(20);
     klik->play();
     player->stop();
 }
@@ -164,9 +160,44 @@ void MainWindow::on_btnStop_clicked()
 
 void MainWindow::on_btnPlay_clicked()
 {
-    klik = new QMediaPlayer;
-    klik->setMedia(QUrl("qrc:/new/sounds/sounds/snd1.wav"));
-    klik->setVolume(20);
     klik->play();
+    player->play();
+}
+
+//przycisk do popszedniego utworu
+
+void MainWindow::on_btnPrev_clicked()
+{
+    klik->play();
+    player->stop();
+    if(n==0)
+    {
+        n = w;
+        playlist->setCurrentIndex(n);
+    }
+    else
+    {
+        n--;
+        playlist->setCurrentIndex(n);
+    }
+    player->play();
+}
+
+//przycisk do następnego utworu
+
+void MainWindow::on_btnNext_clicked()
+{
+    klik->play();
+    player->stop();
+    if(n==w)
+    {
+        n = 0;
+        playlist->setCurrentIndex(n);
+    }
+    else
+    {
+        n++;
+        playlist->setCurrentIndex(n);
+    }
     player->play();
 }

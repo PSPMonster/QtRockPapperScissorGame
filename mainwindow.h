@@ -6,7 +6,7 @@
 #include <QRandomGenerator>
 #include <QDebug>
 #include <QTest>
-#include <QSoundEffect>
+#include <QMediaPlaylist>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -41,15 +41,22 @@ private slots:
 
     void on_btnPlay_clicked();
 
+    void on_btnPrev_clicked();
+
+    void on_btnNext_clicked();
+
 private:
     Ui::MainWindow *ui;
     QMediaPlayer* player;
     QMediaPlayer* klik;
+    QMediaPlaylist* playlist;
 
 private:
+    int n = 0;
     int computerChoice;
     int computerPoints = 1;
     int playerChoice;
     int playerPoints = 1;
+    int w = 5;
 };
 #endif // MAINWINDOW_H

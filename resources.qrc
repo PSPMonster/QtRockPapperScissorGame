@@ -7,5 +7,11 @@
     <qresource prefix="/new/sounds">
         <file>sounds/COMBAT01.MP3</file>
         <file>sounds/snd1.wav</file>
+        <file>sounds/COMBAT02.MP3</file>
+        <file>sounds/COMBAT03.MP3</file>
+        <file>sounds/COMBAT04.MP3</file>
+        <file>sounds/szanty.mp3</file>
+        <file>sounds/newday.mp3</file>
+        <file>sounds/DftPnk.mp3</file>
     </qresource>
 </RCC>
