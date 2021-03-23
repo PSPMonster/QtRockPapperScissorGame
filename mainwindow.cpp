@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     srand(time(NULL));
     ui->setupUi(this);
+    ui->btnPlay->setDisabled(true);
     ui->btnRock->setStyleSheet("border-image:url(:/new/images/images/rock.jpg);");
     ui->btnPaper->setStyleSheet("border-image:url(:/new/images/images/paper.jpg);");
     ui->btnScissors->setStyleSheet("border-image:url(:/new/images/images/scissors.jpg);");
@@ -142,6 +143,8 @@ void MainWindow::on_btnPause_clicked()
 {
     klik->play();
     player->pause();
+    ui->btnPlay->setDisabled(false);
+    ui->btnPause->setDisabled(true);
 }
 
 
@@ -152,6 +155,8 @@ void MainWindow::on_btnStop_clicked()
 {
     klik->play();
     player->stop();
+    ui->btnPlay->setDisabled(false);
+    ui->btnPause->setDisabled(true);
 }
 
 
@@ -162,6 +167,8 @@ void MainWindow::on_btnPlay_clicked()
 {
     klik->play();
     player->play();
+    ui->btnPause->setDisabled(false);
+    ui->btnPlay->setDisabled(true);
 }
 
 //przycisk do popszedniego utworu

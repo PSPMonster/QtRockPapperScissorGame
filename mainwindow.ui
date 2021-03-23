@@ -16,6 +16,11 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:0.495 rgba(255, 255, 255, 255), stop:0.505 rgba(255, 0, 0, 255), stop:1 rgba(255, 0, 0, 255));
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="btnRock">
     <property name="geometry">
@@ -170,7 +175,7 @@ float:  leftl;</string>
      <rect>
       <x>50</x>
       <y>450</y>
-      <width>291</width>
+      <width>308</width>
       <height>91</height>
      </rect>
     </property>
